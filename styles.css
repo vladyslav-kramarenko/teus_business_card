@@ -8,10 +8,11 @@ body {
 }
 
 .business-card {
-    background: linear-gradient(135deg, #002060, #0e4ea6);
-    width: 350px;
+    background: linear-gradient(160deg, #002060, #0e4ea6, #A8CCED);
+
+    width: 375px;
     height: 200px;
-    padding: 20px;
+    padding: 35px 40px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
@@ -21,29 +22,38 @@ body {
 
 .logo {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 35px;
+    left: 40px;
+    width: 55px;
 }
 
 .name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 50px;
-    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 65px;
+
+    font-family: "changeling-neo", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .position {
     font-size: 14px;
-    margin-bottom: 10px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-.contact-info a {
+.contact-info a ,.phone a{
     display: block;
     color: white;
     text-decoration: none;
-    margin-bottom: 5px;
+    /*margin-bottom: 5px;*/
     font-size: 14px;
     transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.phone {
+    margin-bottom: 5px;
 }
 
 .contact-info a:hover {
@@ -58,9 +68,10 @@ body {
 .address {
     font-size: 12px;
     position: absolute;
-    top: 15px;
-    right: 15px;
-    text-align: right;
+    top: 35px;
+    right: 40px;
+    text-align: left;
+    line-height: 16px;
 }
 
 .address a{
@@ -70,12 +81,13 @@ body {
 
 .qr-code {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 5px;
+    bottom: 31px;
+    right: 40px;
+}
+
+.qr-code img{
+    width: 80px;
+    height: 80px;
 }
 
 .link:hover {
