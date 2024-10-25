@@ -41,6 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    transition: background 0.3s ease,color 0.3s ease, transform 0.2s ease;
 }
 
 .download-btn {
@@ -55,13 +56,13 @@ body {
     font-weight: 600;
     display: flex;
     align-items: center;
-    transition: background 0.3s ease;
+    transition: background 0.5s ease,color 0.3s ease, transform 0.5s ease,box-shadow 1s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .download-btn:hover {
-    background: linear-gradient(160deg, #002060, #0e4ea6, #A8CCED);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
 }
 
 .download-btn:active {
@@ -93,6 +94,7 @@ body {
 }
 
 .logo {
+    transition: color 0.3s ease, transform 0.3s ease;
     position: absolute;
     top: 35px;
     left: 40px;
@@ -134,7 +136,8 @@ body {
 }
 
 .contact-info a:active,
-.phone a:active{
+.phone a:active,
+.qr-code:active{
     transform: scale(0.95);
 }
 
@@ -153,9 +156,15 @@ body {
 }
 
 .qr-code {
+    transition: color 0.3s ease, transform 0.3s ease;
     position: absolute;
     bottom: 28px;
     right: 40px;
+}
+
+.qr-code:hover,
+.logo:hover{
+    transform: scale(1.1);
 }
 
 .qr-code img {
@@ -236,5 +245,7 @@ footer a:hover{
         margin-top: 28px;
         margin-bottom: 5px;
     }
-
+    .vcard-download {
+        margin-top: 240px;
+    }
 }
