@@ -7,6 +7,6 @@ TEL;TYPE=WORK,VOICE:+90 530 817 77 43
 TEL;TYPE=WORK,VOICE:+380 50 323 43 21
 EMAIL;TYPE=PREF,INTERNET:b.houari@teus-group.com
 ADR;TYPE=WORK:;;Antalya, Aksu, Altıntaş;205035;15309/12
-URL:https://www.desire-antalya.com
-URL:https://www.teus-group.com
+URL;TYPE=WORK:https://www.desire-antalya.com
+URL;TYPE=WORK:https://www.teus-group.com
 END:VCARD
