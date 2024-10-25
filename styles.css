@@ -9,6 +9,8 @@ body {
 }
 
 .card-container {
+    margin-right: 50px;
+    margin-left: 50px;
     width: 375px;
     height: 200px;
     position: relative;
@@ -26,6 +28,9 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     position: absolute;
+    top:0;
+    left: -40px;
+    /*right: 0;*/
     backface-visibility: hidden; /* Hide the back side during the flip */
 }
 
@@ -108,7 +113,7 @@ body {
 
 .qr-code {
     position: absolute;
-    bottom: 31px;
+    bottom: 28px;
     right: 40px;
 }
 
@@ -145,4 +150,50 @@ footer p {
 footer a{
     text-decoration: none;
     color: #333;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 370px) {
+    .card-container {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    .qr-code img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .business-card {
+        left: -20px;
+        padding: 15px 20px;
+    }
+
+    .qr-code {
+        bottom: 10px;
+        right: 20px;
+    }
+
+    .logo {
+        top: 15px;
+        left: 20px;
+        width: 50px;
+    }
+
+    .address {
+        top: 15px;
+        right: 20px;
+    }
+
+    .contact-info a ,.phone a{
+        font-size: 12px;
+    }
+
+    .phone {
+        margin-top: 28px;
+        margin-bottom: 5px;
+    }
+
 }
