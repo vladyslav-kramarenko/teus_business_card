@@ -15,7 +15,7 @@ body {
     height: 200px;
     position: relative;
     transform-style: preserve-3d;
-    animation: flipCard 2s ease forwards;
+    animation: flipCard 2.5s ease forwards;
 }
 
 .business-card {
@@ -30,8 +30,49 @@ body {
     position: absolute;
     top:0;
     left: -40px;
-    /*right: 0;*/
     backface-visibility: hidden; /* Hide the back side during the flip */
+}
+
+.vcard-download {
+    transform: rotateY(180deg);
+    position: relative;
+    margin-top: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    font-family: "changeling-neo", sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(160deg, #002060, #0e4ea6, #A8CCED);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover {
+    background: linear-gradient(160deg, #002060, #0e4ea6, #A8CCED);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.download-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
 }
 
 #back {
