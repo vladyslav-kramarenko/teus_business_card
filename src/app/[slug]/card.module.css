@@ -1,0 +1,240 @@
+.pageWrapper  {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 90vh;*/
+    /*background-color: #f0f0f0;*/
+    perspective: 1000px; /* Enable 3D perspective */
+}
+
+.cardContainer {
+    margin-right: 50px;
+    margin-left: 50px;
+    width: 375px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: flipCard 2.5s ease forwards;
+}
+
+.businessCard ,.businessCardBack{
+    background: linear-gradient(160deg, #002060, #0e4ea6, #A8CCED);
+    width: 100%;
+    height: 100%;
+    padding: 35px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top:0;
+    left: -40px;
+    backface-visibility: hidden;
+}
+
+
+.businessCardBack {
+    background-color: transparent;
+    transform: rotateY(0deg);
+}
+
+.businessCard {
+    transform: rotateY(180deg);
+}
+
+.link{
+
+}
+
+.vcardDownload {
+    transform: rotateY(180deg);
+    position: relative;
+    margin-top: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: background 0.3s ease,color 0.3s ease, transform 0.2s ease;
+}
+
+.downloadBtn {
+    font-family: "changeling-neo", sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(160deg, #002060, #0e4ea6, #A8CCED);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: background 0.5s ease,color 0.3s ease, transform 0.5s ease,box-shadow 1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.downloadBtn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.downloadBtn:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.downloadIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+
+.backImage {
+    display: flex;
+    width:200px;
+    border-radius: 15px;
+    height: 100%;
+    margin: auto;
+}
+
+.logo {
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    width: 55px;
+}
+
+.name {
+    font-size: 20px;
+    margin-top: 65px;
+    font-family: "changeling-neo", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.position {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.contactInfo a ,.phone a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.phone {
+    margin-bottom: 5px;
+}
+
+.contactInfo a:hover,
+.phone a:hover,
+.address a:hover{
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
+.contactInfo a:active,
+.phone a:active,
+.qr-code:active{
+    transform: scale(0.95);
+}
+
+.address {
+    font-size: 12px;
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    text-align: left;
+    line-height: 16px;
+}
+
+.address a{
+    text-decoration: none;
+    color: white;
+}
+
+.qrCode {
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    bottom: 28px;
+    right: 40px;
+}
+
+.qrCode:hover,
+.logo:hover{
+    transform: scale(1.1);
+}
+
+.qr-code img {
+    width: 80px;
+    height: 80px;
+}
+
+.businessCardBack{
+
+}
+
+/* Flip card animation */
+@keyframes flipCard {
+    0% {
+        transform: rotateY(0deg); /* Back is visible */
+    }
+    50% {
+        transform: rotateY(90deg); /* Mid-flip */
+    }
+    100% {
+        transform: rotateY(180deg); /* Front is visible */
+    }
+}
+
+@media (max-width: 370px) {
+    .cardContainer {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    .qrCode img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .businessCard {
+        left: -20px;
+        padding: 15px 20px;
+    }
+
+    .qrCode {
+        bottom: 10px;
+        right: 20px;
+    }
+
+    .logo {
+        top: 15px;
+        left: 20px;
+        width: 50px;
+    }
+
+    .address {
+        top: 15px;
+        right: 20px;
+    }
+
+    .contactInfo a ,.phone a{
+        font-size: 12px;
+    }
+
+    .phone {
+        margin-top: 28px;
+        margin-bottom: 5px;
+    }
+    .vcardDownload {
+        margin-top: 240px;
+    }
+}
