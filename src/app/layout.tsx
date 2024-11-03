@@ -41,6 +41,19 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+        <head>
+            <meta property="og:title" content="TEUS Group Team"/>
+            <meta property="og:description" content="This is an online business card website for Teus Group employees."/>
+            <meta property="og:url" content="https://card.teus-group.com"/>
+            <meta property="og:type" content="website"/>
+            <meta property="og:image" content="https://card.teus-group.com/card_list_header.jpg"/>
+
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <link rel="icon" href="/favicon.png"/>
+            <link rel="stylesheet" href="https://use.typekit.net/kgl5wdb.css"/>
+            <title>Business Card</title>
+        </head>
         <body>
         <main>{children}</main>
         <Footer/>
