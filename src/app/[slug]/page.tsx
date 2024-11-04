@@ -3,6 +3,7 @@ import {Employee} from '../types/Employee';
 import styles from './card.module.css';
 import Image from 'next/image';
 import Head from "next/head";
+import DownloadButton from "@/components/DownloadButton/DownloadButton";
 
 async function fetchEmployee(slug: string): Promise<Employee | null> {
     const res = await fetch(`https://cms.teus-group.com/api/employees?filters[url][$eq]=${slug}&populate=*`, {
@@ -31,11 +32,13 @@ export default async function BusinessCardPage({
         <>
             <Head>
                 <title>{employee.first_name} {employee.last_name} - {employee.title}</title>
-                <meta name="description" content={`Business card of ${employee.first_name} ${employee.last_name}, ${employee.title} at ${employee.address}`} />
-                <meta property="og:title" content={`${employee.first_name} ${employee.last_name} - ${employee.title}`} />
-                <meta property="og:description" content={`Business card of ${employee.first_name} ${employee.last_name}, ${employee.title}`} />
-                <meta property="og:image" content={`https://cms.teus-group.com/${employee.meta_img.url}`} />
-                <meta property="og:url" content={`https://card.teus-group.com/${employee.url}`} />
+                <meta name="description"
+                      content={`Business card of ${employee.first_name} ${employee.last_name}, ${employee.title} at ${employee.address}`}/>
+                <meta property="og:title" content={`${employee.first_name} ${employee.last_name} - ${employee.title}`}/>
+                <meta property="og:description"
+                      content={`Business card of ${employee.first_name} ${employee.last_name}, ${employee.title}`}/>
+                <meta property="og:image" content={`https://cms.teus-group.com/${employee.meta_img.url}`}/>
+                <meta property="og:url" content={`https://card.teus-group.com/${employee.url}`}/>
             </Head>
             <div className={styles.pageWrapper}>
                 <div className={styles.cardContainer}>
@@ -75,16 +78,7 @@ export default async function BusinessCardPage({
                                height={200}/>
                     </div>
                     <div className={styles.vcardDownload}>
-                        <a
-                            href={`/${employee.first_name.toLowerCase()}_${employee.last_name.toLowerCase()}.vcf`}
-                            download
-                            className={styles.downloadBtn}
-                        >
-                            <Image src="/download-icon.svg" alt="Download Icon" className={styles.downloadIcon}
-                                   width={18}
-                                   height={18}/>
-                            Download
-                        </a>
+                        <DownloadButton employee={employee}/>
                     </div>
                 </div>
             </div>
