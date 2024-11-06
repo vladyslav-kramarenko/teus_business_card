@@ -28,16 +28,30 @@ export default async function BusinessCardPage({
         notFound();
     }
 
+    // Null checks for employee properties
+    const {
+        first_name = '',
+        last_name = '',
+        title = '',
+        phone1 = '',
+        phone2 = '',
+        email = '',
+        website = '',
+        meta_img = null,
+    } = employee || {};
+
     return (
         <>
             <Head>
-                <title>{employee.first_name} {employee.last_name} - {employee.title}</title>
+                <title>{first_name && last_name ? `${first_name} ${last_name} - ${title}` : 'Employee'}</title>
                 <meta name="description"
                       content={`Business card of ${employee.first_name} ${employee.last_name}, ${employee.title} at ${employee.address}`}/>
                 <meta property="og:title" content={`${employee.first_name} ${employee.last_name} - ${employee.title}`}/>
                 <meta property="og:description"
                       content={`Business card of ${employee.first_name} ${employee.last_name}, ${employee.title}`}/>
-                <meta property="og:image" content={`https://cms.teus-group.com/${employee.meta_img.url}`}/>
+                {meta_img?.url && (
+                    <meta property="og:image" content={`https://cms.teus-group.com/${employee.meta_img.url}`}/>
+                )}
                 <meta property="og:url" content={`https://card.teus-group.com/${employee.url}`}/>
             </Head>
             <div className={styles.pageWrapper}>
@@ -49,24 +63,33 @@ export default async function BusinessCardPage({
                         <div className={styles.name}>
                             {employee.first_name} {employee.last_name}
                         </div>
-                        <div className={styles.position}>{employee.title}</div>
+                        {title && <div className={styles.position}>{title}</div>}
                         <div className={styles.phone}>
-                            <a href={`tel:${employee.phone1}`} className={styles.link}>
-                                {employee.phone1}
-                            </a>
-                            <a href={`tel:${employee.phone2}`} className={styles.link}>
-                                {employee.phone2}
-                            </a>
+                            {phone1 && (
+                                <a href={`tel:${phone1}`} className={styles.link}>
+                                    {phone1}
+                                </a>
+                            )}
+                            {phone2 && (
+                                <a href={`tel:${phone2}`} className={styles.link}>
+                                    {phone2}
+                                </a>
+                            )}
                         </div>
+
                         <div className={styles.contactInfo}>
-                            <a href={`mailto:${employee.email}`} className={styles.link}>
-                                {employee.email}
-                            </a>
-                            <a href={employee.website} target="_blank" rel="noopener noreferrer"
-                               className={styles.link}>
-                                {employee.website}
-                            </a>
+                            {email && (
+                                <a href={`mailto:${email}`} className={styles.link}>
+                                    {email}
+                                </a>
+                            )}
+                            {website && (
+                                <a href={website} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                                    {website}
+                                </a>
+                            )}
                         </div>
+
                         <div className={styles.qrCode}>
                             <a href="https://multilink.teus-group.com" target="_blank" rel="noopener noreferrer">
                                 <Image src="/teus_multilink_qr_white.png" alt="QR Code" width={80} height={80}/>
