@@ -116,7 +116,7 @@ body {
     margin-top: 10px;
 }
 
-.contact-info a ,.phone a{
+.contact-info a ,.contacts a{
     display: block;
     color: white;
     text-decoration: none;
@@ -124,19 +124,19 @@ body {
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.phone {
+.contacts {
     margin-bottom: 5px;
 }
 
 .contact-info a:hover,
-.phone a:hover,
+.contacts a:hover,
 .address a:hover{
     color: #f0f0f0;
     text-decoration: underline;
 }
 
 .contact-info a:active,
-.phone a:active,
+.contacts a:active,
 .qr-code:active{
     transform: scale(0.95);
 }
@@ -171,6 +171,31 @@ body {
     width: 80px;
     height: 80px;
 }
+
+.contacts a img {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    display: inline !important;
+}
+
+.icon {
+  vertical-align: text-bottom;
+  margin-right: 6px;
+}
+
+.icon-phone {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-telegram {
+  width: 14px;
+  height: 14px;
+}
+
+
+
 
 /* Flip card animation */
 @keyframes flipCard {
@@ -237,11 +262,11 @@ footer a:hover{
         right: 20px;
     }
 
-    .contact-info a ,.phone a{
+    .contact-info a, .contacts a{
         font-size: 12px;
     }
 
-    .phone {
+    .contacts {
         margin-top: 28px;
         margin-bottom: 5px;
     }
